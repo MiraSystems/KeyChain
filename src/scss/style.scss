@@ -1,5 +1,6 @@
 @import "reset";
 body{
+  max-width: 100%;
   font-family: 'Raleway', sans-serif;
   display: grid;
   grid-template-columns: 350px auto;
@@ -33,7 +34,13 @@ $background:	#323049;
   }
   main{
     ul{
+      height: calc(100vh - 60px);
+      overflow-y: scroll;
+      ::-webkit-scrollbar{
+        background: $background;
+      }
       li{
+        padding-left: 10px;
         padding-top: 5px;
         padding-bottom: 5px;
         display: grid;
@@ -118,7 +125,7 @@ $background:	#323049;
       }
       input {
         color: white;
-        width: 100%;
+        width: 500px;
         border: transparent;
         background: #66677c;
         margin-top: 5px;
@@ -128,7 +135,7 @@ $background:	#323049;
         outline: none;
         border-bottom: 2px solid #48b248;
       }
-      div#strenght{
+      div#strength{
         height: 10px;
         border: .5px solid darkgrey;
         border-radius: 24px;
