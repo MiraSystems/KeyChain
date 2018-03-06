@@ -1,0 +1,29 @@
+{
+  "name": "mira-keychain",
+  "version": "1.0.0",
+  "description": "Open-Source Password Manager",
+  "main": "index.html",
+  "scripts": {},
+  "authors": [
+    "Jonas Van Hoof",
+    "Matthias Willemsen"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "",
+    "babel-preset-env": "",
+    "babel-preset-es2015": "",
+    "browser-sync": "",
+    "gulp": "",
+    "gulp-babel": "",
+    "gulp-concat": "",
+    "gulp-imagemin": "",
+    "gulp-sass": "",
+    "gulp-sourcemaps": "",
+    "gulp-typescript": "",
+    "gulp-uglify": "",
+    "gulp-clean": "",
+    "gulp-plumber": "",
+    "typescript": ""
+  }
+}
