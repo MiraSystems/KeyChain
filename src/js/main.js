@@ -19,14 +19,24 @@ let applications = [
   "Twitch",
   "Cisco",
   "Amazon",
-  "Ali-expres",
+  "AliExpress",
   "Reddit",
   "Swarm",
   "Belfius",
   "Outlook",
   "Office365"
-  ];
-applications.forEach(function (app) {
+];
+
+function findApp (element) {
+  let app = element.value;
+  if (applications.indexOf(app) !== -1) {
+    console.log('App exits: ' + applications[applications.indexOf(app)]);
+  } else {
+    console.log('App doesn\'t exist');
+  }
+}
+
+/* applications.forEach(function (app) {
 switch (app){
   case app === applications :
     if (app !==// niet bestaat)
@@ -53,4 +63,4 @@ switch (app){
       app.clear()
     }
 }
-});
+}); */
