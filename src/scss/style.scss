@@ -38,7 +38,7 @@ $background:	#323049;
     ul{
       height: calc(100vh - 60px);
       overflow-y: scroll;
-      ::-webkit-scrollbar-track{
+      ::-webkit-scrollbar{
         background: $background;
       }
       li{
