@@ -14,29 +14,31 @@ $background:	#323049;
     grid-template-columns: 40px auto 40px;
     height: 60px;
     border-bottom: .5px solid black ;
-    i{
-      color: white;
-      text-align: center;
-      line-height: 60px;
-      vertical-align: middle;
-    }
-    input{
-      color: white;
-      margin-top: 10px;
-      border: transparent;
-      height: 40px;
-      background: $background;
-    }
-    button{
-      border: transparent;
-      background: transparent;
-    }
+      i{
+        color: white;
+        text-align: center;
+        line-height: 60px;
+        vertical-align: middle;
+      }
+      input{
+        color: white;
+        margin-top: 10px;
+        border: transparent;
+        height: 40px;
+        background: $background;
+        outline: none;
+      }
+      button{
+        border: transparent;
+        background: transparent;
+        outline: none;
+      }
   }
   main{
     ul{
       height: calc(100vh - 60px);
       overflow-y: scroll;
-      ::-webkit-scrollbar{
+      ::-webkit-scrollbar-track{
         background: $background;
       }
       li{
@@ -92,6 +94,7 @@ $background:	#323049;
     button{
       border: transparent;
       background: transparent;
+      outline: none;
       i{
         color: white;
       }
@@ -131,6 +134,7 @@ $background:	#323049;
         background: #66677c;
         margin-top: 5px;
         margin-bottom: 5px;
+        outline: none;
       }
       input:focus {
         outline: none;
