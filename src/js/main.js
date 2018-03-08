@@ -73,6 +73,16 @@ let activeApps = [
   "abcde"
 ];
 
+
+/*window.addEventListener('load', function() {
+  activeApps = localStorage.getItem('Saved');
+  localStorage.setItem('Saved', activeApps);
+  activeApps.forEach((item) => {
+    addApp();
+  });
+});*/
+
+
 function addApp() {
   let list = document.getElementById('list');
   let input = document.getElementById('ingave').value;
@@ -89,7 +99,6 @@ function addApp() {
     console.log(active);
     if(input !== thing) {
         activeApps.push(input);
-      console.log('ja');
     } else {
       active = true;
       alert("You already have that application in your list.");
@@ -129,6 +138,3 @@ function ToggleScreen(input) {
       '    </form>\n' +
       '  </main>';
   }
-
-
-
