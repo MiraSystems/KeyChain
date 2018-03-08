@@ -69,7 +69,9 @@ let templates = {
     src: 'img/spotify.svg'
   },
 };
-let activeApps = [];
+let activeApps = [
+  "abcde"
+];
 
 function addApp() {
   let list = document.getElementById('list');
@@ -84,8 +86,10 @@ function addApp() {
     '      </li>';
   let active = false;
   activeApps.forEach(function (thing) {
+    console.log(active);
     if(input !== thing) {
         activeApps.push(input);
+      console.log('ja');
     } else {
       active = true;
       alert("You already have that application in your list.");
