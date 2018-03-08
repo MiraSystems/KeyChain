@@ -12,19 +12,12 @@
 <body>
 <section class="programList">
   <header>
-    <button onclick="UnknownApp()" id="zoek" style="cursor: pointer"><i class="material-icons">search</i></button>
-    <input id="ingave" type="text" placeholder="Search" style="cursor: pointer" onkeyup="findApp(this)">
+    <button onclick="addApp()" id="zoek" style="cursor: pointer"><i class="material-icons">search</i></button>
+    <input id="ingave" type="text" placeholder="Search" style="cursor: pointer">
     <button><i class="material-icons">more_vert</i></button>
   </header>
   <main>
     <ul id="list">
-      <li id="AddItem">
-        <img id="img" src="img/facebook.svg" alt="">
-        <div>
-          <p id="Name">Facebook</p>
-          <a href="">6 March 10:21</a>
-        </div>
-      </li>
     </ul>
   </main>
 
@@ -37,23 +30,8 @@
     <button><i class="material-icons">expand_more</i></button>
     <button><i class="material-icons">power_settings_new</i></button>
   </header>
-  <main>
-    <div class="titel">
-      <img src="img/facebook.svg" alt="">
-      <h2>Facebook account</h2>
-    </div>
-    <form>
-      <label for="username">Username</label>
-      <input id="username" type="text">
-      <label for="password">Password</label>
-      <input id="password" type="password">
-      <label for="strength">Strength</label>
-      <div id="strength"></div>
-      <label for="email">E-mail</label>
-      <input id="email" type="email">
-      <label for="site">Website</label>
-      <input id="site" type="search">
-    </form>
+  <main id="change">
+
   </main>
 
 </section>

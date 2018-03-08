@@ -1,159 +1,130 @@
 // JS
-let applications = [
-  "Gmail",
-  "Facebook",
-  "Artesis Plantyn",
-  "Paypal",
-  "Coolblue",
-  "Slack",
-  "Google",
-  "Youtube",
-  "Instagram",
-  "Reddit",
-  "Dropbox",
-  "Swarm",
-  "LinkedIn",
-  "Skype",
-  "Tinder",
-  "Outlook",
-  "Office",
-  "Evernote",
-  "Twitch",
-  "Github",
-  "Spotify"
-];
+let templates = {
+  facebook:{
+    name: 'Facebook',
+    src: 'img/facebook.svg'
+  },
+  Gmail:{
+    name: 'Gmail',
+    src: 'img/gmail.svg'
+  },
+  paypal:{
+    name: 'Paypal',
+    src: 'img/paypal.svg'
+  },
+  slack:{
+    name: 'Slack',
+    src: 'img/slack.svg'
+  },
+  google:{
+    name: 'Google',
+    src: 'img/google-plus.svg'
+  },
+  youtube:{
+    name: 'Youtube',
+    src: 'img/youtube.svg'
+  },
+  instagram:{
+    name: 'Instagram',
+    src: 'img/instagram.svg'
+  },
+  reddit:{
+    name: 'Reddit',
+    src: 'img/reddit.svg'
+  },
+  dropbox:{
+    name: 'Dropbox',
+    src: 'img/dropbox.svg'
+  },
+  swarm:{
+    name: 'Swarm',
+    src: 'img/swarm.svg'
+  },
+  linkedin:{
+    name: 'LinkedIn',
+    src: 'img/linkedin.svg'
+  },
+  skype:{
+    name: 'Skype',
+    src: 'img/skype.svg'
+  },
+  outlook:{
+    name: 'Outlook',
+    src: 'img/outlook.svg'
+  },
+  office:{
+    name: 'Office',
+    src: 'img/office.svg'
+  },
+  twitch:{
+    name: 'Twitch',
+    src: 'img/twitch.svg'
+  },
+  github:{
+    name: 'Github',
+    src: 'img/github.svg'
+  },
+  spotify:{
+    name: 'Spotify',
+    src: 'img/spotify.svg'
+  },
+};
+let activeApps = [];
 
-function findApp (element) {
-  let app = element.value;
-  if (applications.indexOf(app) !== -1) {
-    console.log('App exits: ' + applications[applications.indexOf(app)]);
-    let jup = prompt("Do you want to add " + app + " to your list?");
-    if (jup === "yes")
-    {
-      addApp();
-      TabInfo(app);
-      console.log(app + " tab created");
-    }
-  } else {
-    console.log('App doesn\'t exist');
-  }
-}
-function UnknownApp() {
-  let answer = prompt("Do you want to add this application to the application list?");
-  if (answer === "yes")
-  {
-    let naam =document.getElementById('ingave').innerHTML = naam;
-    console.log(naam);
-    applications.push(naam);
-    addApp();
-    TabInfo(naam);
-  }
-}
 function addApp() {
   let list = document.getElementById('list');
-  let adding = document.getElementById('AddItem').innerHTML;
-  let addings = document.createElement('li');
-  list.appendChild(addings);
-  addings.innerHTML = adding;
-  console.log(addings);
+  let input = document.getElementById('ingave').value;
+  let item =
+    '      <li onclick="ToggleScreen(\'' + input + '\')">\n' +
+    '        <img id="img" src="' + templates[input].src + '" alt="">\n' +
+    '        <div>\n' +
+    '          <p id="Name">' + templates[input].name + '</p>\n' +
+    '          <p>6 March 10:21</p>\n' +
+    '        </div>\n' +
+    '      </li>';
+  let active = false;
+  activeApps.forEach(function (thing) {
+    if(input !== thing) {
+        activeApps.push(input);
+    } else {
+      active = true;
+      alert("You already have that application in your list.");
+    }
+  });
+
+  if (active === false)
+  {
+    list.innerHTML += item;
+    document.getElementById('Name').style.color = "white";
+    ToggleScreen(input);
+  }
+  else{
+    console.log('exists');
+  }
 }
-function TabInfo(input) {
-  let Name = document.getElementById('Name');
-  Name.innerHTML = input ;
-  if (input === "Slack")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/slack.svg";
-  }
-  if (input === "Facebook")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/facebook.svg";
-  }
-  if (input === "Gmail")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/gmail.svg";
-  }
-  if (input === "Youtube")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/youtube.svg";
-  }
-  if (input === "Google")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/google-plus.svg";
-  }
-  if (input === "Paypal")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/paypal.svg";
-  }
-  if (input === "Reddit")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/reddit.svg";
-  }
-  if (input === "Dropbox") {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/dropbox.svg";
-  }
-  if (input === "Instagram")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/instagram.svg";
-  }
-  if (input === "LinkedIn")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/linkedin.svg";
-  }
-  if (input === "Skype")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/skype.svg";
-  }
-  if (input === "Outlook")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/outlook.svg";
-  }
-  if (input === "Tinder")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/tinder.svg";
-  }
-  if (input === "Office")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/office.svg";
-  }
-  if (input === "Swarm")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/swarm.svg";
-  }
-  if (input === "Evernote")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/evernote.svg";
-  }
-  if (input === "Twitch")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/twitch.svg";
-  }
-  if (input === "Github")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/github.svg";
-  }
-  if (input === "Spotify")
-  {
-    let afbeelding = document.getElementById('img');
-    afbeelding.src = "img/spotify.svg";
+
+function ToggleScreen(input) {
+    let inhoud = document.getElementById('change');
+    inhoud.innerHTML =
+      '  <main>\n' +
+      '    <div class="titel">\n' +
+      '      <img id="img" src="' + templates[input].src + '" alt="">\n' +
+      '      <h2> '+ templates[input].name + ' account</h2>\n' +
+      '    </div>\n' +
+      '    <form>\n' +
+      '      <label for="username">Username</label>\n' +
+      '      <input id="username" type="text">\n' +
+      '      <label for="password">Password</label>\n' +
+      '      <input id="password" type="password">\n' +
+      '      <label for="strength">Strength</label>\n' +
+      '      <div id="strength"></div>\n' +
+      '      <label for="email">E-mail</label>\n' +
+      '      <input id="email" type="email">\n' +
+      '      <label for="site">Website</label>\n' +
+      '      <input id="site" type="search">\n' +
+      '    </form>\n' +
+      '  </main>';
   }
 
-}
+
 
