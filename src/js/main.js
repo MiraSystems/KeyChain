@@ -73,14 +73,17 @@ let activeApps = [
   "abcde"
 ];
 
+let inteface = {
+  password: "",
 
-window.addEventListener('load', function() {
+};
+
+/*window.addEventListener('load', function() {
   activeApps = localStorage.getItem('Saved');
   localStorage.setItem('Saved', activeApps);
   activeApps.forEach((item) => {
-    item = addApp();
   });
-});
+});*/
 
 
 function addApp() {
@@ -129,12 +132,29 @@ function ToggleScreen(input) {
       '      <input id="username" type="text">\n' +
       '      <label for="password">Password</label>\n' +
       '      <input id="password" type="password">\n' +
-      '      <label for="strength">Strength</label>\n' +
-      '      <div id="strength"></div>\n' +
       '      <label for="email">E-mail</label>\n' +
       '      <input id="email" type="email">\n' +
       '      <label for="site">Website</label>\n' +
       '      <input id="site" type="search">\n' +
+      '      <input type="button" value="GOOOO" onsubmit="addAccount(\' + templates[input].name + \')">\n' +
       '    </form>\n' +
       '  </main>';
-  }
+}
+function addAccount(event, name) {
+  event.preventDefault();
+  let theApp = templates[name].name;
+  let username = document.getElementById('username');
+  let password = document.getElementById('password').value;
+  let email = document.getElementById('email').value;
+  let website = document.getElementById('site').value;
+
+  let app = {
+    naam: theApp,
+    user: username,
+    security: password,
+    login: email,
+    site: website
+  };
+  console.log(app);
+}
+
