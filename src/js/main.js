@@ -74,13 +74,13 @@ let activeApps = [
 ];
 
 
-/*window.addEventListener('load', function() {
+window.addEventListener('load', function() {
   activeApps = localStorage.getItem('Saved');
   localStorage.setItem('Saved', activeApps);
   activeApps.forEach((item) => {
-    addApp();
+    item = addApp();
   });
-});*/
+});
 
 
 function addApp() {
