@@ -3,27 +3,33 @@
   "version": "1.0.0",
   "description": "Open-Source Password Manager",
   "main": "index.html",
-  "scripts": {},
+  "scripts": {
+    "start": "electron ./dist/js/app.js",
+    "serve": "gulp serve",
+    "build": "gulp build"
+  },
   "authors": [
     "Jonas Van Hoof",
     "Matthias Willemsen"
   ],
   "license": "MIT",
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "",
     "babel-preset-env": "",
     "babel-preset-es2015": "",
     "browser-sync": "",
+    "electron": "^1.8.3",
     "gulp": "",
     "gulp-babel": "",
+    "gulp-clean": "",
     "gulp-concat": "",
     "gulp-imagemin": "",
+    "gulp-plumber": "",
     "gulp-sass": "",
     "gulp-sourcemaps": "",
     "gulp-typescript": "",
     "gulp-uglify": "",
-    "gulp-clean": "",
-    "gulp-plumber": "",
     "typescript": ""
   }
 }
